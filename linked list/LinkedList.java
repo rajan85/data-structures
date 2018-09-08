@@ -114,5 +114,67 @@ public void deleteAt(int index)
 	}
 	temp.next = temp.next.next;	
 }
+
+public static int lengthRec(Node n)
+{
+		if(n==null)
+			return 0;
+		else return 1+lengthRec(n.next);
+}
+
+public int length()
+{
+	int count = 0;
+	Node temp = this.head;
+	while(temp!=null)
+	{
+		count++;
+		temp = temp.next;
+	}
+	return count;
+}
+
+public boolean search(int item)
+{
+	Node temp = head;
+	while(temp!=null && temp.data!=item)
+		temp = temp.next;
+	
+	if(temp==null)
+		return false;
+	else return true;
+}
+
+public static boolean searchRec(Node n,int item)
+{
+	if(n==null)
+			return false;
+	
+	else{
+		if(n.data==item)
+		return true;
+		else return searchRec(n.next,item);
+	}
+		
+}
+
+public int elementAt(int item)
+{
+		if(item<0)
+			return 0;
+		Node temp = head;
+		int count=0;
+		while(temp!=null && count!=item)
+		{
+			temp = temp.next;
+			count++;
+	}
+		if(temp==null)
+			return 0;
+		else return temp.data;
+
+}
+
+
 	
 }
