@@ -175,6 +175,34 @@ public int elementAt(int item)
 
 }
 
+public int middle()
+{
+	
+	Node temp = this.head;
+	Node temp2 = this.head;
+	/*
+	method-1 implementation-1
+	while(temp2!=null )
+	{
+		
+		if(temp2.next!=null)
+		temp2 = temp2.next.next;
+		else {temp2 = temp2.next;
+		break;
+	}
+	temp = temp.next;
+	}*/
+	//method-1 implementation-2
+	while(temp2!=null && temp2.next!=null)
+	{
+		temp = temp.next;
+		temp2 = temp2.next.next;
+	}
+	
+	return temp.data;
+
 
 	
+}
+
 }
