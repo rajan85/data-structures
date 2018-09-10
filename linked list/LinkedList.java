@@ -177,7 +177,7 @@ public int elementAt(int item)
 
 public int middle()
 {
-	// This funtion returns the middle element if linked list
+	// function for middle
 	Node temp = this.head;
 	Node temp2 = this.head;
 	/*
