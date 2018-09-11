@@ -2,8 +2,7 @@ import java.util.*;
 public class LinkedList
 {
 Node head;
-
-public class Node
+static class Node
 {
 	int data;
 	Node next;
@@ -200,9 +199,41 @@ public int middle()
 	}
 	
 	return temp.data;
-
-
-	
 }
+
+public int occurrence(int a)
+{
+		int count=0;
+		Node temp = this.head;
+		while(temp!=null)
+		{
+			if(temp.data == a)
+				count++;
+			temp = temp.next;
+		}
+		
+		return count;
+}
+
+public boolean isThereLoop()
+{
+	HashSet<Node> h = new HashSet();
+	Node temp = head;
+	while(temp!=null)
+	{
+		if(h.contains(temp))
+			return true;
+		else{
+			h.add(temp);
+			temp = temp.next;
+		}
+	}
+	
+	return false;
+}
+
+
+
+
 
 }
